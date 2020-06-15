@@ -1,5 +1,8 @@
+<?php include '../partials/navbar.php';
+     include '../partials/head.php'; ?>
 
 
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,6 +22,10 @@ include '../partials/navbar.php';
  
 ?>
 
+=======
+<body>
+
+>>>>>>> 9d0a9c13a479790831b73db13b128cd9fc805427
 
 </br> </br></br>
 
@@ -65,16 +72,17 @@ include '../partials/navbar.php';
 include '../partials/sidebar.php';
 ?>
         <div class="row">
-            <?php  for ($i=1; $i <10; $i++):?>
-            <div class="card col-4 mb-2" style="width: 15rem;">
-                <img src="https://source.unsplash.com/random/country" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                       
-                    </div>
-            </div>
-            <?php endfor ?>
+            <?php  for ($i=1; $i <11; $i++):?>
+                <div class="firstcard shadow-sm " style="width: 18rem;" data-card="cardTrip">
+                    <img src="../assets/images/plages.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">JAPON</h5>
+                            <p class="card-text">1/5 NOTE
+                                <br>PRIX: 200 euro</p>
+                                <a href="#" class="btn btn-primary">INFO</a>
+                       </div>
+                </div>
+                <?php endfor ?>
         </div>
     </div>
 <!-- FIN BOUCLE PHP -->
@@ -88,10 +96,15 @@ include '../partials/sidebar.php';
 
 
 
+<<<<<<< HEAD
+=======
+
+<?php include '../partials/footer.php'?>
+>>>>>>> 9d0a9c13a479790831b73db13b128cd9fc805427
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
 </body>
 </html>
-
 

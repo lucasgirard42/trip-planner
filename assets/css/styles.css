@@ -33,3 +33,19 @@
     position: relative;
     top: 38px;
   }
+
+
+ .firstcard{
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .9s ease-in-out;
+	transition: .9s ease-in-out;
+   
+ }
+ .firstcard:hover {
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
