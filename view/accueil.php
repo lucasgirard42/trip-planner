@@ -1,15 +1,55 @@
-<?php include '../partials/navbar.php' ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="../assets/css/styles.css">
     <title>trip planner</title>
 </head>
 <body>
+<?php include '../partials/navbar.php'; ?>
+
+</br> </br></br>
+
+<!-- CAROUSEL -->
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="../assets/images/india.jpg" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="../assets/images/malaisie.jpg" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="../assets/images/moscou.jpg" alt="Third slide">
+    </div>
+  </div>
+</div>
+<!-- FIN CAROUSEL -->
+
+<!---BOITE QUI FILTRE LA RECHERCHE----->
+<div class="filtrer" style="background-color: royalblue;">
+<div class="searchbody">
+    <label for="bday" class="depart" style="font-family: 'Trebuchet MS', Helvetica, sans-serif; padding-left: 210px;">Date de départ &nbsp</label>
+    <label for="bday" class="arrivee" style="font-family: 'Trebuchet MS', Helvetica, sans-serif;">Date d'arrivée</label> </br> </br>
+    <input placeholder= "Saisir la ville de départ" style="width: 200px; height: 50px; border: 2px solid black; text-indent: 15px; "></input>
+    <input style="height: 50px; border: 2px solid black;" type="date" id="start" name="trip-start"
+       value="Date de départ"
+       min="2020-06-10" max="2050-12-31">
+       <input style="height: 50px; border: 2px solid black;" type="date" id="end" name="trip-end"
+       value="Date d'arrivée"
+       min="2020-06-10" max="2050-12-31">
+       <input type="submit" value="Chercher une destination" style="background-color: crimson; height: 70px; border-radius: 15px; border: 2px black solid;">
+</div>
+</div>
+<!--FIN DE BOITE -->
+
+
+<!-- BOUCLE PHP AVEC CARDS -->
     <div class="container">
         
         <div class="row">
@@ -25,6 +65,8 @@
             <?php endfor ?>
         </div>
     </div>
+<!-- FIN BOUCLE PHP -->
+
 
 
 
