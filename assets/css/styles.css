@@ -1,0 +1,43 @@
+.carousel {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.carousel-inner > .item >img{
+    min-height : 300px;
+    max-height : 300px;
+    width : 100%;
+  }
+
+  .filtrer {
+      border: 2px solid black;
+      width: 70%;
+      margin: 0 auto;
+      bottom: 250px;
+      border-radius: 10% / 50%;
+      position: relative;
+      bottom: 50px;
+  }
+
+  .searchbody {
+      padding-left: 110px;
+      margin-bottom: 25px;
+  }
+
+  .depart {
+   position: relative;
+   top: 38px;
+  }
+
+  .arrivee {
+    position: relative;
+    top: 38px;
+  }
+
+
+ .firstcard{
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+   
+ }
