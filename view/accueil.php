@@ -6,12 +6,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="../assets/css/styles.css">
     <title>trip planner</title>
+    <script src="../assets/js/myscript.js"></script>
 </head>
 <body>
-<?php include '../partials/navbar.php'; ?>
+
+<?php
+include '../partials/navbar.php';
+ 
+?>
+
 
 </br> </br></br>
 
@@ -31,6 +38,8 @@
 </div>
 <!-- FIN CAROUSEL -->
 
+
+
 <!---BOITE QUI FILTRE LA RECHERCHE----->
 <div class="filtrer" style="background-color: royalblue;">
 <div class="searchbody">
@@ -49,9 +58,12 @@
 <!--FIN DE BOITE -->
 
 
+
 <!-- BOUCLE PHP AVEC CARDS -->
     <div class="container">
-        
+    <?php
+include '../partials/sidebar.php';
+?>
         <div class="row">
             <?php  for ($i=1; $i <10; $i++):?>
             <div class="card col-4 mb-2" style="width: 15rem;">
@@ -66,7 +78,6 @@
         </div>
     </div>
 <!-- FIN BOUCLE PHP -->
-
 
 
 
