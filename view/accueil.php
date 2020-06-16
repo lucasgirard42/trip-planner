@@ -1,7 +1,5 @@
-<?php
-include '../partials/head.php';
-include '../partials/navbar.php';
-      ?>
+<?php include '../partials/navbar.php';
+     include '../partials/head.php'; ?>
 
 
 
