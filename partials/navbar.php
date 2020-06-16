@@ -3,11 +3,12 @@ include 'head.php';
 ?>
 
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light ">
+<nav class="navbar navbar-expand-lg bg-light shadow-sm ">
   <img src="../assets/images/rsz_1logo.png" alt="">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+
 
     <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarSupportedContent">
         <ul class="navbar-nav ">
@@ -22,10 +23,10 @@ include 'head.php';
             Dropdown
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="../view/admin.php">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="../view/adminTO.php">Section Tour-opérateur</a>
+            <a class="dropdown-item" href="">section Utilisateur</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
+            <a class="dropdown-item" href="#">section admin</a>
             </div>
         </li>
         

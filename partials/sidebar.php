@@ -1,3 +1,7 @@
+<button type="button" id="sidebarCollapse" class="btn btn-info">
+                <i class="fas fa-align-left"></i>
+                <span>Afficher/Cacher</span>
+            </button>
 <div class="wrapper">
     <!-- Sidebar -->
     <nav id="sidebar">
@@ -47,23 +51,14 @@
         </ul>
 </nav>
 
-</div>
-<div id="content">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
 
-            <button type="button" id="sidebarCollapse" class="btn btn-info">
-                <i class="fas fa-align-left"></i>
-                <span>Toggle Sidebar</span>
-            </button>
+    
 
-        </div>
-    </nav>
-</div>
+
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
-</head>
+
 
 <style>
 .wrapper {
@@ -72,16 +67,18 @@
 }
 
 #sidebar {
-    min-width: 250px;
-    max-width: 250px;
-    min-height: 100vh;
+    margin-left: -60px;
+    min-width: 200px;
+    max-width: 200px;
+    min-height: 70vh;
     background: #7386D5;
     color: #fff;
     transition: all 0.3s;
+    border: 1px solid black;
 }
 
 #sidebar.active {
-    margin-left: -250px;
+    margin-left: -300px;
 }
 
 a[data-toggle="collapse"] {
@@ -161,5 +158,6 @@ ul ul a {
     padding-left: 30px !important;
     background: #6d7fcc;
 }
+
 </style>
 

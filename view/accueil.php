@@ -2,14 +2,13 @@
      include '../partials/head.php'; ?>
 
 
-<body>
 
 
 </br> </br></br>
 
 <!-- CAROUSEL -->
 <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
+  <div class="carousel-inner shadow-lg">
     <div class="carousel-item active">
       <img class="d-block w-100" src="../assets/images/india.jpg" alt="First slide">
     </div>
@@ -26,7 +25,7 @@
 
 
 <!---BOITE QUI FILTRE LA RECHERCHE----->
-<div class="filtrer" style="background-color: royalblue;">
+<div class="filtrer shadow-lg" style="background-color: royalblue;">
 <div class="searchbody">
     <label for="bday" class="depart" style="font-family: 'Trebuchet MS', Helvetica, sans-serif; padding-left: 210px;">Date de départ &nbsp</label>
     <label for="bday" class="arrivee" style="font-family: 'Trebuchet MS', Helvetica, sans-serif;">Date d'arrivée</label> </br> </br>
@@ -46,27 +45,30 @@
 
 <!-- BOUCLE PHP AVEC CARDS -->
     <div class="container">
-    <?php
+        <div class="row">
+        <?php
 include '../partials/sidebar.php';
 ?>
-        <div class="row">
             <?php  for ($i=1; $i <11; $i++):?>
-                <div class="firstcard shadow-sm " style="width: 18rem;" data-card="cardTrip">
-                    <img src="../assets/images/plages.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
+                <div class="firstcard card shadow-sm col-1" style="width: 18rem;" data-card="cardTrip">
+                    <img src="../assets/images/plages.jpg" class="card-img-top">
+                        <div class="card-body" style="background-color: white;">
                             <h5 class="card-title">JAPON</h5>
                             <p class="card-text">1/5 NOTE
                                 <br>PRIX: 200 euro</p>
                                 <a href="#" class="btn btn-primary">INFO</a>
                        </div>
                 </div>
+            </br>
                 <?php endfor ?>
         </div>
     </div>
+            </div>
 <!-- FIN BOUCLE PHP -->
 
 
 
+            </br>
 
 
 

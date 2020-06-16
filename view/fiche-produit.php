@@ -24,9 +24,9 @@
 <br>
 <div class="container">
 <?php  for ($i=1; $i <11; $i++):?>
-    <div class="secondCard mb-12 mt-5">
+    <div class="secondCard  shadow-sm mb-12 mt-5">
         <div class="row no-gutters">
-            <div class="card-image col-md-6">
+            <div class="card-image  border-top col-md-6">
                 <img src="../assets/images/plages.jpg" class="card-img" alt="...">
             </div>
             <div class=" card-text col-md-6">

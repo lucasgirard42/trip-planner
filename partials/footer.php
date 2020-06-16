@@ -4,9 +4,7 @@ include 'head.php';
 
 
 
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 <!------ Include the above in your HEAD tag ---------->
 
 <!-- Footer -->
@@ -86,7 +84,7 @@ section .section-title {
     text-transform: uppercase;
 }
 #footer {
-    background-color: royalblue !important;
+	background-color: royalblue !important;
 }
 #footer h5{
 	padding-left: 10px;

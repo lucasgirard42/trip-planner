@@ -1,6 +1,13 @@
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 .carousel {
     width: 100%;
     margin: 0 auto;
+    
+
 }
 
 .carousel-inner > .item >img{
@@ -17,6 +24,7 @@
       border-radius: 10% / 50%;
       position: relative;
       bottom: 50px;
+      
   }
 
   .searchbody {
@@ -43,7 +51,9 @@
     -webkit-transform: scale(1);
 	transform: scale(1);
 	-webkit-transition: .9s ease-in-out;
-	transition: .9s ease-in-out;
+    transition: .9s ease-in-out;
+    display: flex;
+    flex-wrap: wrap;
    
  }
  .firstcard:hover {
