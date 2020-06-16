@@ -23,6 +23,8 @@
 </div>
 <!-- FIN CAROUSEL -->
 
+
+
 <!---BOITE QUI FILTRE LA RECHERCHE----->
 <div class="filtrer" style="background-color: royalblue;">
 <div class="searchbody">
@@ -41,9 +43,12 @@
 <!--FIN DE BOITE -->
 
 
+
 <!-- BOUCLE PHP AVEC CARDS -->
     <div class="container">
-        
+    <?php
+include '../partials/sidebar.php';
+?>
         <div class="row">
             <?php  for ($i=1; $i <11; $i++):?>
                 <div class="firstcard shadow-sm " style="width: 18rem;" data-card="cardTrip">
@@ -68,6 +73,15 @@
 
 
 
+
+
+
+
+
+
+
+
+<?php include '../partials/form.php'?>
 
 
 <?php include '../partials/footer.php'?>

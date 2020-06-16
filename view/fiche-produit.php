@@ -23,23 +23,33 @@
 <h1 class="pays text-center">JAPON</h1>
 <br>
 <div class="container">
-    <div class="secondCard mb-12">
+<?php  for ($i=1; $i <11; $i++):?>
+    <div class="secondCard mb-12 mt-5">
         <div class="row no-gutters">
-            <div class="col-md-6">
+            <div class="card-image col-md-6">
                 <img src="../assets/images/plages.jpg" class="card-img" alt="...">
             </div>
-            <div class="col-md-6">
+            <div class=" card-text col-md-6">
                 <div class="secondCard-body text-center">
                     <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="card-text ">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                 </div>
+            </div>
+            <div class="card-review col-md-12">
+                <div class="secondCard-body">
+                    <p class="card-text ">commentaire:</p>
+                    <p>review:</p>
+                    <p>note:</p>
+                </div><br><br>
             </div>
         </div>
     </div>
+    <?php endfor ?>
 </div>
 
 
-    
+<?php include '../partials/form.php'?>
+
 <?php include '../partials/footer.php'?>
 
 
