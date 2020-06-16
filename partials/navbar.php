@@ -3,11 +3,12 @@ include 'head.php';
 ?>
 
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light ">
+<nav class="navbar navbar-expand-lg">
   <img src="../assets/images/rsz_1logo.png" alt="">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+
 
     <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarSupportedContent">
         <ul class="navbar-nav ">
@@ -36,6 +37,31 @@ include 'head.php';
             <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
         </svg>
 </nav>
+<div class=minidiv>
+</div>
 
+
+<style>
+
+.navbar {
+    background-color: black; 
+}
+
+a:link, a:visited {
+    color: white;
+}
+
+a:hover {
+    color: white;
+}
+
+.minidiv {
+    border: 1px black solid;
+    height: 15px;
+    background-color: grey;
+    
+}
+
+</style>
 
 
