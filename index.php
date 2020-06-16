@@ -1,3 +1,3 @@
 <?php
-header ('location: view/accueil.php');
+header ('location: view/authentification.php');
 ?>

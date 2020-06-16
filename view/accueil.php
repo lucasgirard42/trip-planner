@@ -1,5 +1,7 @@
-<?php include '../partials/navbar.php';
-     include '../partials/head.php'; ?>
+<?php
+include '../partials/head.php';
+include '../partials/navbar.php';
+      ?>
 
 
 <body style="background-color: antiquewhite;">
