@@ -3,7 +3,7 @@ include 'head.php';
 ?>
 
 
-<nav class="navbar navbar-expand-lg">
+<nav class="navbar navbar-expand-lg bg-light shadow-sm ">
   <img src="../assets/images/rsz_1logo.png" alt="">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -23,10 +23,10 @@ include 'head.php';
             Dropdown
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="../view/adminTO.php">Section Tour-opérateur</a>
+            <a class="dropdown-item" href="">section Utilisateur</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
+            <a class="dropdown-item" href="#">section admin</a>
             </div>
         </li>
         
@@ -37,31 +37,6 @@ include 'head.php';
             <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
         </svg>
 </nav>
-<div class=minidiv>
-</div>
 
-
-<style>
-
-.navbar {
-    background-color: black; 
-}
-
-a:link, a:visited {
-    color: white;
-}
-
-a:hover {
-    color: white;
-}
-
-.minidiv {
-    border: 1px black solid;
-    height: 15px;
-    background-color: grey;
-    
-}
-
-</style>
 
 

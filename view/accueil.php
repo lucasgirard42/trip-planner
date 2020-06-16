@@ -4,13 +4,13 @@ include '../partials/navbar.php';
       ?>
 
 
-<body style="background-color: antiquewhite;">
+
 
 </br> </br></br>
 
 <!-- CAROUSEL -->
 <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
+  <div class="carousel-inner shadow-lg">
     <div class="carousel-item active">
       <img class="d-block w-100" src="../assets/images/india.jpg" alt="First slide">
     </div>
@@ -27,7 +27,7 @@ include '../partials/navbar.php';
 
 
 <!---BOITE QUI FILTRE LA RECHERCHE----->
-<div class="filtrer" style="background-color: royalblue;">
+<div class="filtrer shadow-lg" style="background-color: royalblue;">
 <div class="searchbody">
     <label for="bday" class="depart" style="font-family: 'Trebuchet MS', Helvetica, sans-serif; padding-left: 210px;">Date de départ &nbsp</label>
     <label for="bday" class="arrivee" style="font-family: 'Trebuchet MS', Helvetica, sans-serif;">Date d'arrivée</label> </br> </br>
@@ -53,7 +53,7 @@ include '../partials/sidebar.php';
 ?>
             <?php  for ($i=1; $i <11; $i++):?>
                 <div class="firstcard card shadow-sm col-1" style="width: 18rem;" data-card="cardTrip">
-                    <img src="../assets/images/plages.jpg" class="card-img-top" alt="...">
+                    <img src="../assets/images/plages.jpg" class="card-img-top">
                         <div class="card-body" style="background-color: white;">
                             <h5 class="card-title">JAPON</h5>
                             <p class="card-text">1/5 NOTE
@@ -79,8 +79,18 @@ include '../partials/sidebar.php';
 
 
 
+
+
+
+
+
+
+<?php include '../partials/form.php'?>
+
+
 <?php include '../partials/footer.php'?>
-        
+
+
 </body>
 </html>
 
