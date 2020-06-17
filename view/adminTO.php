@@ -1,4 +1,10 @@
+
+include '../class/tourOperator.php';
+
+
+
 <?php include '../partials/head.php'; ?>
+
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm ">
   <img src="../assets/images/rsz_1logo.png" alt="">
@@ -37,6 +43,12 @@
 </nav>
 
 
+
+
+
+
+
+
 <div class="container">
   <form class="formulaire" action="../class/tourOperator.php" method="POST">
     <div class="form-group">
@@ -66,3 +78,6 @@
     </div>
   </form>
 </div>
+  
+  
+  <?php include '../partials/footer.php'?>

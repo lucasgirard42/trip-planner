@@ -2,12 +2,14 @@
 
 require '../config/autoload.php';
 
+
 // class TourOperator {
 //     private $id;
 //     private $name;
 //     private $grade;
 //     private $link;
 //     private $is_premium;
+
 
 //     public function __construct(){
 

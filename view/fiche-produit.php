@@ -1,8 +1,112 @@
 <?php include '../partials/navbar.php';
-     include '../partials/head.php'; ?>
+     include '../partials/head.php';
+ ?>
 
+<?php
+  if (isset($_POST['save'])) {
+      include '../config/autoload.php';
+      $uID = $bdd->real_escape_string($_POST['grade']);
+      $grade = $bdd->real_escape_string($_POST['grade']);
+      $grade++;
+
+      if (!$uID) {
+         $bdd->query("INSERT INTO tour_operators (grade) VALUES ('$grade')");
+         $sql = $bdd->query("SELECT gradeID FROM tour_operators ORDER BY gradeID DESC LIMIT 1");
+         $uData = $sql->fetch_assoc();
+         $uID = $uData['gradeID'];
+  }    else
+         $bdd->query("UPDATE tour_operators SET grade='$grade' WHERE gradeID ='$uID");
+      
+         exit(json_encode(array('gradeID' => $uID)));
+  }
+
+  $sql = $bdd->query("SELECT gradeID FROM tour_operators");
+  $numR = $sql->num_rows;
+
+  $sql = $bdd->query("SELECT SUM(grade) AS total FROM tour_operators");
+  $rData = $sql->fetch_array();
+  $total = $uData['total'];
+
+  $avg = $total / $numR;
+?>
 
 <body>
+
+<div style="background-color: black;">
+<i class="fa fa-star fa-2x" data-index="0"></i>
+<i class="fa fa-star fa-2x" data-index="1"></i>
+<i class="fa fa-star fa-2x" data-index="2"></i>
+<i class="fa fa-star fa-2x" data-index="3"></i>
+<i class="fa fa-star fa-2x" data-index="4"></i>
+<br><br>
+Note :  <?php echo $avg ?> Sur 5
+</div>
+
+<script>
+  var grade = -1, uID = 0;
+  $(document).ready(function (){
+      resetStarColors();
+
+      if (localStorage.getItem('grade') != null) {
+         setStars(parseInt(localStorage.getItem('grade')));
+         uID = localStorage.getItem('uID');
+          }
+      
+      $('.fa-star').on('click', function () {
+          grade = parseInt($(this).data('index'));
+          localStorage.setItem('grade', grade);
+          saveToTheDB();
+      });
+
+      $('.fa-star').mouseover(function () {
+         resetStarColors();
+         var currentIndex = parseInt($(this).data('index'));
+         setStars(currentIndex);
+
+         for (var i=0; i <= currentIndex; i++)
+            $('.fa-star:eq('+i+')').css('color', 'gold');
+      });
+      $('.fa-star').mouseleave(function () {
+          resetStarColors();
+
+          if (grade != -1)
+             setStars(grade);
+
+         
+      });
+  });
+
+  function saveToTheDB() {
+      $.ajax({
+          url: "fiche-produit.php",
+          method: "POST", 
+          dataType: 'json',
+          data: {
+              save: 1,
+              uID: uID,
+              grade: grade
+          }, success: function (r) {
+              uID = r.uid;
+              localStorage.setItem('uID', uID);
+              saveToTheDB();
+          }
+      });
+  }
+
+  function setStars(max) {
+    for (var i=0; i <= max; i++)
+            $('.fa-star:eq('+i+')').css('color', 'gold');
+  }
+
+function resetStarColors() {
+    $('.fa-star').css('color', 'white');
+}
+</script>
+
+
+
+
+
 </br> </br></br>
     <div class="filtrer" style="background-color: royalblue;">
         <div class="searchbody">
@@ -48,10 +152,17 @@
 </div>
 
 
+
+
+
+
+
+
 <?php include '../partials/form.php'?>
 
 <?php include '../partials/footer.php'?>
 
 
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 </body>
 </html>

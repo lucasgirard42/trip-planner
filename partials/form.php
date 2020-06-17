@@ -1,4 +1,8 @@
+
+
+
 <section class="bg-img text-center bg-light">
+
         <div class="container">
           <h2>
             <strong>Subscribe</strong>
@@ -7,7 +11,10 @@
           <br><br>
           <form class="form-subscribe" action="#">
             <div class="input-group">
-              <input type="text" class="form-control input-lg" placeholder="Your eamil address">
+
+              <input type="text" class="form-control input-lg" placeholder="Your email address">
+
+
               <span class="input-group-btn">
                 <button class="btn btn-success btn-lg" type="submit" >Subscribe</button>
               </span>

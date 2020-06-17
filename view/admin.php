@@ -52,11 +52,13 @@
     <tbody>
         <tr>
         <th scope="row">1</th>
+
         <td>clubmed</td>
         <td>www.clubmed.com</td>
         <td>japon</td>
         <td>oui</td>
         <td><button type="button" class="btn btn-danger">Supprimer</button></td>
+
         </tr>
     </tbody>
     </table>
