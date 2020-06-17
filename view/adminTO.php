@@ -40,61 +40,32 @@ include '../partials/head.php'; ?>
 </nav>
 
 
-
 <div class="container">
-  <table class="tableTo shadow-sm">
-    <thead class="thead-light bg-light">
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Nom Tour operateur</th>
-        <th scope="col">Lien du site</th>
-        <th scope="col">Destination</th>
-        <th scope="col">Ajout Image</th>
-        <th scope="col">Membre Premium</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <form action="#" method="post">
-        <td>
-          <input type="text" name="name" placeholder="tour-opérateur" required/>
-        </td>
-        <td>
-        <input type="text" name="link"  placeholder="ex: www.voyage.com" required/>
-        </td>
-        <td>
-        <input type="text" name="destination" placeholder="votre destination" required />
-        </td>
-        <td>
-        <label for="img_profil">Votre image de destination</label>
-        <input type="file" class="form-control-file" accept="image/*" name="image" required>
-        <?php
-              if(isset($_GET['error']) && $_GET['error'] === 'image'){  ?>
-        <p>Le format de votre image n'est pas bon!</p>
-              <?php  }
-              ?>
-        </td>
-        <td>
-        <input type="checkbox" class="custom-control-input" id="customSwitches" name="ispremium">
-        <label class="custom-control-label" for="customSwitches">voulez-vous être un membre premium ?</label>
-        <button class="btn btn-success w-50 mt-2 text-center" type="submit" name="submit">Valider</button>
-        </td>
-    </tbody>
-  </table>
+  <form class="formulaire" action="../class/tourOperator.php" method="POST">
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Nom tour opérator</label>
+      <input type="text" name="name" class="form-control" id="exampleFormControlInput1" placeholder="clubmed">
+    </div>
+    <!-- <div class="form-group">
+      <label for="exampleFormControlSelect1" name="grade">grade</label>
+      <select class="form-control" id="exampleFormControlSelect1">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div> -->
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Nom du site</label>
+      <input type="text" name="link" class="form-control" id="exampleFormControlInput1" placeholder="clubmed">
+    </div>
+    <div class="form-group">
+    <p>voulez-vous être membre premium ?</p>
+    <input type="checkbox" name="premium" checked data-toggle="toggle">
+    </div>
+    <div class="form-group">
+    <button class="btn btn-success col-md-12 w-50" type="submit">valider</button>
+    </div>
+  </form>
 </div>
- 
-  
- 
-
-
-
-<?php include '../partials/footer.php'?>
-
-<style>
-  .tableTo{
-    margin-bottom: 200px;
-    margin-top: 50px;
-
-  }
-</style>
