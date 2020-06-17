@@ -23,6 +23,11 @@ require '../config/autoload.php';
 //         } 
 //     }
 
+
+
+// --------------------------------------------------- SECTION NOTE AVEC ETOILES ----------------------------------------
+
+
 //     public function getIdTourOperator(){
 //         if(!empty($_POST["idTourOperator"])) {
 //             $location = htmlspecialchars($_POST["idTourOperator"]);
