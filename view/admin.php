@@ -46,7 +46,7 @@
         <th scope="col">lien du site</th>
         <th scope="col">Destination</th>
         <th scope="col">Membre premium</th>
-        <th scope="col">suprimer</th>
+        <th scope="col">supprimer</th>
         </tr>
     </thead>
     <tbody>

@@ -1,4 +1,7 @@
-<?php include '../partials/head.php'; ?>
+<?php 
+include '../class/tourOperator.php';
+include '../partials/head.php'; ?>
+
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm ">
   <img src="../assets/images/rsz_1logo.png" alt="">
@@ -53,19 +56,19 @@
     <tbody>
       <tr>
         <th scope="row">1</th>
-        <form action="..." method="post">
+        <form action="#" method="post">
         <td>
-          <input type="text" name="tour_operators" placeholder="tour-opérateur" required/>
+          <input type="text" name="name" placeholder="tour-opérateur" required/>
         </td>
         <td>
-        <input type="text" name="site"  placeholder="www.voyage.com" required/>
+        <input type="text" name="link"  placeholder="ex: www.voyage.com" required/>
         </td>
         <td>
         <input type="text" name="destination" placeholder="votre destination" required />
         </td>
         <td>
         <label for="img_profil">Votre image de destination</label>
-        <input type="file" class="form-control-file" accept="image/*" name="img_profil" required>
+        <input type="file" class="form-control-file" accept="image/*" name="image" required>
         <?php
               if(isset($_GET['error']) && $_GET['error'] === 'image'){  ?>
         <p>Le format de votre image n'est pas bon!</p>
@@ -73,7 +76,7 @@
               ?>
         </td>
         <td>
-        <input type="checkbox" class="custom-control-input" id="customSwitches">
+        <input type="checkbox" class="custom-control-input" id="customSwitches" name="ispremium">
         <label class="custom-control-label" for="customSwitches">voulez-vous être un membre premium ?</label>
         <button class="btn btn-success w-50 mt-2 text-center" type="submit" name="submit">Valider</button>
         </td>

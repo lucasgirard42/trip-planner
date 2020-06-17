@@ -9,9 +9,9 @@ include '../partials/head.php';
 <p>Avant de commencer à naviguer sur le site, séléctionnez ci-dessous selon votre cas :</p>
 </div>
 <button type="button" class="btn btn-secondary" name="voyageur"><a href="accueil.php">Je veux réserver un voyage</button></a>
-<button type="button" class="btn btn-success" name="voyagiste">Je suis un voyagiste</button>
+<button type="button" class="btn btn-success" name="voyagiste"><a href="adminTO.php">Je suis un voyagiste</button></a>
 </br>
-<button type="button" class="btn btn-warning" name="admin">Je suis un Administrateur</button> 
+<button type="button" class="btn btn-warning" name="admin"><a href="admin.php">Je suis un Administrateur</button></a> 
 
 </div>
 

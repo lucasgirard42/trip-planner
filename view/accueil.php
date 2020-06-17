@@ -27,10 +27,10 @@ include '../partials/navbar.php';
 
 
 <!---BOITE QUI FILTRE LA RECHERCHE----->
-<div class="filtrer shadow-lg" style="background-color: royalblue;">
+<div class="filtrer shadow-lg" style="background-color: royalblue; opacity: 95%;">
 <div class="searchbody">
-    <label for="bday" class="depart" style="font-family: 'Trebuchet MS', Helvetica, sans-serif; padding-left: 210px;">Date de départ &nbsp</label>
-    <label for="bday" class="arrivee" style="font-family: 'Trebuchet MS', Helvetica, sans-serif;">Date d'arrivée</label> </br> </br>
+    <label for="bday" class="depart" style="font-family: 'Trebuchet MS', Helvetica, sans-serif; padding-left: 210px;"><strong>Date de départ</strong> &nbsp</label>
+    <label for="bday" class="arrivee" style="font-family: 'Trebuchet MS', Helvetica, sans-serif;"><strong>Date d'arrivée</strong></label> </br> </br>
     <input placeholder= "Saisir la ville de départ" style="width: 200px; height: 50px; border: 2px solid black; text-indent: 15px; "></input>
     <input style="height: 50px; border: 2px solid black;" type="date" id="start" name="trip-start"
        value="Date de départ"
@@ -67,10 +67,30 @@ include '../partials/sidebar.php';
     </div>
             </div>
 <!-- FIN BOUCLE PHP -->
-
-
-
             </br>
+
+            <div class="scrollbaby"></div>
+
+<script>
+  $(function() {
+
+$("body").mousewheel(function(event, delta) {
+
+   this.scrollLeft -= (delta * 30);
+ 
+   event.preventDefault();
+
+});
+
+});
+</script>
+
+<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js?ver=1.3.2'></script>
+<script type='text/javascript' src='/js/jquery.mousewheel.min.js'></script>
+
+
+
+
 
 
 
