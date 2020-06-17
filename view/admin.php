@@ -46,17 +46,17 @@
         <th scope="col">lien du site</th>
         <th scope="col">Destination</th>
         <th scope="col">Membre premium</th>
-        <th scope="col">suprimer</th>
+        <th scope="col">supprimer</th>
         </tr>
     </thead>
     <tbody>
         <tr>
         <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        <td>@mdo</td>
-        <td>@mdo</td>
+        <td>clubmed</td>
+        <td>www.clubmed.com</td>
+        <td>japon</td>
+        <td>oui</td>
+        <td><button type="button" class="btn btn-danger">Supprimer</button></td>
         </tr>
     </tbody>
     </table>
