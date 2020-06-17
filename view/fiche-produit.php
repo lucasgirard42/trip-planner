@@ -3,9 +3,13 @@
  ?>
 
 <?php
-  if (isset($_POST['save'])) {
-      include '../config/autoload.php';
-      $uID = $bdd->real_escape_string($_POST['grade']);
+
+
+     $bdd= new mysqli("localhost","root","","comparoperator");
+
+      if (isset($_POST['save'])) {
+     // include '../config/autoload.php';
+      $uID = $bdd->real_escape_string($_POST['uID']);
       $grade = $bdd->real_escape_string($_POST['grade']);
       $grade++;
 
@@ -25,7 +29,7 @@
 
   $sql = $bdd->query("SELECT SUM(grade) AS total FROM tour_operators");
   $rData = $sql->fetch_array();
-  $total = $uData['total'];
+  $total = $rData['total'];
 
   $avg = $total / $numR;
 ?>
@@ -39,7 +43,7 @@
 <i class="fa fa-star fa-2x" data-index="3"></i>
 <i class="fa fa-star fa-2x" data-index="4"></i>
 <br><br>
-Note :  <?php echo $avg ?> Sur 5
+<!--Note :  <?php echo $avg ?> Sur 5 -->
 </div>
 
 <script>
