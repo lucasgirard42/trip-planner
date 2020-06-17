@@ -27,7 +27,11 @@ include '../partials/navbar.php';
 
 
 <!---BOITE QUI FILTRE LA RECHERCHE----->
+
 <div class="filtrer shadow-lg" style="background-color: royalblue; opacity: 95%;">
+
+
+
 <div class="searchbody">
     <label for="bday" class="depart" style="font-family: 'Trebuchet MS', Helvetica, sans-serif; padding-left: 210px;"><strong>Date de départ</strong> &nbsp</label>
     <label for="bday" class="arrivee" style="font-family: 'Trebuchet MS', Helvetica, sans-serif;"><strong>Date d'arrivée</strong></label> </br> </br>

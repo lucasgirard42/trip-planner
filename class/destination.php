@@ -1,35 +1,42 @@
 <?php
 require '../config/autoload.php';
 
-class Destination {
-    private $id;
-    private $location;
-    private $price;
-    private $id_tour_operator;
+// class Destination {
+//     private $id;
+//     private $location;
+//     private $price;
+//     private $id_tour_operator;
+//     private $images;
 
-    public function __construct(){
+//     public function __construct(){
     
-    }
+//     }
 
-    public function getLocation(){
+//     public function getLocation(){
         
-        if(!empty($_POST["location"])) {
-            $location = htmlspecialchars($_POST["location"]);
-        } 
-    }
+//         if(!empty($_POST["location"])) {
+//             $location = htmlspecialchars($_POST["location"]);
+//         } 
+//     }
 
-    public function getPrice() {
-        if(!empty($_POST["price"])) {
-            $price = htmlspecialchars($_POST["price"]);
-        } 
+//     public function getPrice() {
+//         if(!empty($_POST["price"])) {
+//             $price = htmlspecialchars($_POST["price"]);
+//         } 
         
-    }
+//     }
 
-    public function getId_Tour_Operator() {
-        if(!empty($_POST["idTourOperator"])) {
-            $location = htmlspecialchars($_POST["idTourOperator"]);
-        } 
-    }
+//     public function getId_Tour_Operator() {
+//         if(!empty($_POST["idTourOperator"])) {
+//             $location = htmlspecialchars($_POST["idTourOperator"]);
+//         } 
+//     }
 
-}
+//     public function getImages() {
+//         if(!empty($_POST["images"])) {
+//             $location = htmlspecialchars($_POST["images"]);
+//         } 
+//     }
+
+// }
 ?>
