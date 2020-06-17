@@ -2,7 +2,6 @@
 
 require '../config/autoload.php';
 
-
 // class TourOperator {
 //     private $id;
 //     private $name;
@@ -40,40 +39,50 @@ require '../config/autoload.php';
 //     }
 
 // }
+
 // récupération des valeurs du formulaire
 $name = $_POST['name'];
 // $grade =  $_POST['grade'];
 $link = $_POST['link'];
+$location = $_POST['location'];
+$price = $_POST['price'];
 
 
-$premium = $_POST['premium'];
+$joinOperatorId = $bdd->query('SELECT * 
+                                FROM destinations
+                                INNER JOIN tour_operators
+                                ON destinations.id_tour_operator = tour_operators.id');
+
+$tourOperatorIds = $joinOperatorId->fetchAll();
 
 
 
 
-// var_dump($lastname);
-// var_dump($firstname);
-// var_dump($birthdate);
-// var_dump($phone);
-// var_dump($mail);
-
-// requête en code SQL 'brut'
-// $bdd->exec("INSERT INTO patients(lastname, firstname, birthdate, phone, mail)
-//             VALUES ('".$lastname."', '".$firstname."','".$birthdate."','". $phone ."','". $mail ."') ");
+ 
 
 //préparation d'une requête
 
-$inserTO = $bdd->prepare("  INSERT INTO tour_operators(name, grade, link, is_premium)
-                                VALUES (?,?,?,?) ");
+$inserTO = $bdd->prepare("  INSERT INTO tour_operators(name, link )
+                                VALUES (?,?) ");
                             
 $inserTO->execute([
         $name,
+        $link
+ ]);
+ 
+ $inserLocation = $bdd->prepare("  INSERT INTO destinations(location, price)
+ VALUES (?,?) ");
+
+$inserLocation->execute([
+    $location,
+    $price
+
+]);
+ ?>      
+        
+        
        
         
-        $link,
-        $premium 
         
         
-        
-]);
-?>
+        SELECT * FROM `destinations` INNER JOIN `tour_operators` ON `destinations.id_tour_operator` = `tour_operators.id`

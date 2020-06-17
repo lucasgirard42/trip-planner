@@ -1,9 +1,9 @@
 
-include '../class/tourOperator.php';
+<?php include '../config/autoload.php';
 
 
 
-<?php include '../partials/head.php'; ?>
+ include '../partials/head.php'; ?> 
 
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm ">
@@ -46,33 +46,39 @@ include '../class/tourOperator.php';
 
 
 
-
-
-
 <div class="container">
   <form class="formulaire" action="../class/tourOperator.php" method="POST">
     <div class="form-group">
       <label for="exampleFormControlInput1">Nom tour opérator</label>
       <input type="text" name="name" class="form-control" id="exampleFormControlInput1" placeholder="clubmed">
     </div>
-    <!-- <div class="form-group">
-      <label for="exampleFormControlSelect1" name="grade">grade</label>
-      <select class="form-control" id="exampleFormControlSelect1">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-      </select>
-    </div> -->
     <div class="form-group">
       <label for="exampleFormControlInput1">Nom du site</label>
       <input type="text" name="link" class="form-control" id="exampleFormControlInput1" placeholder="clubmed">
     </div>
-    <div class="form-group">
-    <p>voulez-vous être membre premium ?</p>
-    <input type="checkbox" name="premium" checked data-toggle="toggle">
+     <div class="form-group">
+      <label for="exampleFormControlSelect1" >destination</label>
+      <select name="location" class="form-control" id="exampleFormControlSelect1">
+        <option value="JAPON">JAPON</option>
+        <option value="AUSTRALIE">AUSTRALIE</option>
+        <option value="INDE">INDE</option>
+        <option value="MAROC">MAROC</option>
+        <option value="MARTINIQUE">MARTINIQUE</option>
+        <option value="CANADA">CANADA</option>
+        <option value="PEROU">PEROU</option>
+        <option value="EGYPTE">EGYPTE</option>
+        <option value="ISLANDE">ISLANDE</option>
+        <option value="FINLANDE">FINLANDE</option>
+      </select>
     </div>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">prix (€)</label>
+      <input type="number" name="price">
+      
+    </div>
+
+   
+    
     <div class="form-group">
     <button class="btn btn-success col-md-12 w-50" type="submit">valider</button>
     </div>

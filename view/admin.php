@@ -1,4 +1,14 @@
-<?php include '../partials/head.php'; ?>
+<?php include '../partials/head.php';
+include '../config/autoload.php'; 
+
+
+
+
+$request = $bdd->query("SELECT * from tour_operators");
+$TOs = $request->fetchAll();
+
+
+?>
 
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm ">
@@ -50,16 +60,18 @@
         </tr>
     </thead>
     <tbody>
+    <?php foreach($TOs as $TO) {?>
         <tr>
-        <th scope="row">1</th>
+        <th scope="row"><?= ($TO['id']) ?></th>
 
-        <td>clubmed</td>
-        <td>www.clubmed.com</td>
+        <td><?= ($TO['name'])?></td>
+        <td><?= ($TO['link'])?></td>
         <td>japon</td>
         <td>oui</td>
         <td><button type="button" class="btn btn-danger">Supprimer</button></td>
 
         </tr>
+    <?php } ?>
     </tbody>
     </table>
 </div>

@@ -1,6 +1,11 @@
-<?php
+<?php 
+
 include '../partials/head.php';
 include '../partials/navbar.php';
+include '../config/autoload.php'; 
+
+$request = $bdd->query("SELECT * from tour_operators");
+$TOs = $request->fetchAll();
       ?>
 
 
@@ -55,18 +60,20 @@ include '../partials/navbar.php';
         <?php
 include '../partials/sidebar.php';
 ?>
-            <?php  for ($i=1; $i <11; $i++):?>
-                <div class="firstcard card shadow-sm col-1" style="width: 18rem;" data-card="cardTrip">
+            <?php  foreach($TOs as $TO) {?>
+                <div class="firstcard card shadow-sm col-2" style="width: 18rem;" data-card="cardTrip">
                     <img src="../assets/images/plages.jpg" class="card-img-top">
                         <div class="card-body" style="background-color: white;">
                             <h5 class="card-title">JAPON</h5>
                             <p class="card-text">1/5 NOTE
                                 <br>PRIX: 200 euro</p>
                                 <a href="#" class="btn btn-primary">INFO</a>
+                                <?=($TO['name']);?>
                        </div>
                 </div>
-            </br>
-                <?php endfor ?>
+            <?php }?>
+            </br> 
+            
         </div>
     </div>
             </div>
