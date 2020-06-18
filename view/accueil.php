@@ -8,6 +8,8 @@ include '../class/review.php';
 
 $request = $bdd->query("SELECT * from tour_operators");
 $TOs = $request->fetchAll();
+
+
       ?>
 
 
@@ -23,7 +25,7 @@ $TOs = $request->fetchAll();
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="" method="post">
+      <form action="../class/review.php" method="post">
       <div class="modal-body">
         <input type="text" name="author" placeholder="PSEUDO">
       </div>
@@ -101,6 +103,7 @@ $TOs = $request->fetchAll();
                             <p class="card-text">1/5 NOTE
                                 <br>PRIX: 200 euro</p>
                                 <a href="fiche-produit.php" class="btn btn-primary">INFO</a>
+                                <br>
                                 <?=($TO['name']);?>
                        </div>
                 </div>
