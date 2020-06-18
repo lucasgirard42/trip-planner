@@ -5,10 +5,10 @@ $bdd = new PDO('mysql:host=localhost;dbname=comparoperator', 'root', '');
 $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING); 
 
    //On enregistre notre autoload.
-   function chargerClasse($classname) {
-    require './class/' .$classname.'.php';
-   }
+   //function chargerClasse($classname) {
+   //require './class/' .$classname.'.php';
+  // }
  
-    spl_autoload_register('chargerClasse');
+  //  spl_autoload_register('chargerClasse');
 
    ?>

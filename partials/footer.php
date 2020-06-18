@@ -24,9 +24,9 @@ include 'head.php';
 			</div>	
 
 </br>
-			<div class="row text-center text-xs-center text-sm-left text-md-left" style="margin-left: 250px;">
+			<div class="row text-center text-xs-center text-sm-left text-md-left" style="margin-left: 170px;">
 				<div class="col-xs-12 col-sm-4 col-md-4">
-					<h5>Quick links</h5>
+					<h5>A propos</h5>
 					<ul class="list-unstyled quick-links">
 						<li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>Home</a></li>
 						<li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>About</a></li>
@@ -36,7 +36,7 @@ include 'head.php';
 					</ul>
 				</div>
 				<div class="col-xs-12 col-sm-4 col-md-4">
-					<h5>Quick links</h5>
+					<h5>Nos partenaires</h5>
 					<ul class="list-unstyled quick-links">
 						<li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>Home</a></li>
 						<li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>About</a></li>
@@ -46,7 +46,7 @@ include 'head.php';
 					</ul>
 				</div>
 				<div class="col-xs-12 col-sm-4 col-md-4">
-					<h5>Quick links</h5>
+					<h5>Liens rapides</h5>
 					<ul class="list-unstyled quick-links">
 						<li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>Home</a></li>
 						<li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>About</a></li>
