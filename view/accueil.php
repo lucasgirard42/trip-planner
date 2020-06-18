@@ -11,7 +11,8 @@ $TOs = $request->fetchAll();
       ?>
 
 
-
+<html>
+<body>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -105,15 +106,18 @@ include '../partials/sidebar.php';
                                 <?=($TO['name']);?>
                        </div>
                 </div>
-            <?php }?>
-            </br> 
+            <?php }?> 
             
         </div>
     </div>
+    </div>
             
 <!-- FIN BOUCLE PHP -->
-            </br>
+        
+<?php include '../partials/form.php'?>
 
+
+<?php include '../partials/footer.php'?>
 
 
 
@@ -137,10 +141,7 @@ include '../partials/sidebar.php';
 
 
 
-<?php include '../partials/form.php'?>
 
-
-<?php include '../partials/footer.php'?>
 
 
 </body>

@@ -39,8 +39,8 @@
 
 if(!empty($_POST["author"])) {
     $author = htmlspecialchars($_POST["author"]);
-    $insertAuthor = $bdd->prepare('INSERT INTO reviews (id, author) VALUES (?, ?)');
-    $insertAuthor->execute([$user_id, $author]);
+    $insertAuthor = $bdd->prepare('INSERT INTO reviews (author) VALUES (?)');
+    $insertAuthor->execute([$author]);
     
     
     setcookie("user_cookie", $author);
