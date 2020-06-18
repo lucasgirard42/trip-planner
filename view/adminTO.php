@@ -74,7 +74,16 @@
     <div class="form-group">
       <label for="exampleFormControlInput1">prix (€)</label>
       <input type="number" name="price">
-      
+    </div>
+    <div class="form-group">
+      <label for="img_profil">Choisir une photo de profil</label>
+      <input type="file" class="form-control-file"  accept="image/*" name="img_profil" required>
+        <?php
+              if(isset($_GET['error']) && $_GET['error'] === 'image'){  ?>
+                <p>Le format de votre image n'est pas bon!</p>
+              <?php  }
+              ?>     
+              
     </div>
 
    

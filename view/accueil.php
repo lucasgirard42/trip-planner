@@ -61,7 +61,7 @@ $TOs = $request->fetchAll();
 include '../partials/sidebar.php';
 ?>
             <?php  foreach($TOs as $TO) {?>
-                <div class="firstcard card shadow-sm col-2" style="width: 18rem;" data-card="cardTrip">
+                <div class="firstcard card shadow-sm mr-5 " style="width: 18rem; height: 25rem;" data-card="cardTrip">
                     <img src="../assets/images/plages.jpg" class="card-img-top">
                         <div class="card-body" style="background-color: white;">
                             <h5 class="card-title">JAPON</h5>

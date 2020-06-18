@@ -46,6 +46,8 @@ $name = $_POST['name'];
 $link = $_POST['link'];
 $location = $_POST['location'];
 $price = $_POST['price'];
+// $id_tour_operator = 1++;
+$img_profil = $_POST['img_profil'];
 
 
 $joinOperatorId = $bdd->query('SELECT * 
@@ -70,12 +72,20 @@ $inserTO->execute([
         $link
  ]);
  
- $inserLocation = $bdd->prepare("  INSERT INTO destinations(location, price)
- VALUES (?,?) ");
+ $inserLocation = $bdd->prepare("  INSERT INTO destinations(location, price, id_tour_operator, images)
+ VALUES (?,?,?,?) ");
 
 $inserLocation->execute([
     $location,
-    $price
+    $price,
+    
+    $img_profil
+
+
+
+
+    
+   
 
 ]);
  ?>      
@@ -85,4 +95,4 @@ $inserLocation->execute([
         
         
         
-        SELECT * FROM `destinations` INNER JOIN `tour_operators` ON `destinations.id_tour_operator` = `tour_operators.id`
+        <!--SELECT * FROM `destinations` INNER JOIN `tour_operators` ON `destinations.id_tour_operator` = `tour_operators.id`
