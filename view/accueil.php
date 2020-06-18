@@ -11,7 +11,8 @@ $TOs = $request->fetchAll();
       ?>
 
 
-
+<html>
+<body>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -91,9 +92,7 @@ $TOs = $request->fetchAll();
 <!-- BOUCLE PHP AVEC CARDS -->
     <div class="container">
         <div class="row">
-        <?php
-include '../partials/sidebar.php';
-?>
+
             <?php  foreach($TOs as $TO) {?>
                 <div class="firstcard card shadow-sm col-2" style="width: 18rem;" data-card="cardTrip">
                     <img src="../assets/images/plages.jpg" class="card-img-top">
@@ -105,15 +104,18 @@ include '../partials/sidebar.php';
                                 <?=($TO['name']);?>
                        </div>
                 </div>
-            <?php }?>
-            </br> 
+            <?php }?> 
             
         </div>
     </div>
+    </div>
             
 <!-- FIN BOUCLE PHP -->
-            </br>
+        
+<?php include '../partials/form.php'?>
 
+
+<?php include '../partials/footer.php'?>
 
 
 
@@ -121,28 +123,4 @@ include '../partials/sidebar.php';
 <!--<script type='text/javascript' src='/js/jquery.mousewheel.min.js'></script> -->
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<?php include '../partials/form.php'?>
-
-
-<?php include '../partials/footer.php'?>
-
-
-</body>
-</html>
 
