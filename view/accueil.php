@@ -2,7 +2,9 @@
 
 include '../partials/head.php';
 include '../partials/navbar.php';
-include '../config/autoload.php'; 
+include '../config/autoload.php';
+include '../class/review.php';
+
 
 $request = $bdd->query("SELECT * from tour_operators");
 $TOs = $request->fetchAll();
@@ -10,6 +12,38 @@ $TOs = $request->fetchAll();
 
 
 
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel" style="color: black; margin-left: 160px;">Connectez-vous</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="" method="post">
+      <div class="modal-body">
+        <input type="text" name="author" placeholder="PSEUDO">
+      </div>
+      <div class="modal-header">
+        <h6 class="modal-title" id="exampleModalLabel" style="color: black; margin-left: 150px;">Ou créez un compte</h6>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <input type="text" name="author" placeholder="PSEUDO">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+        <button type="submit" class="btn btn-primary">Valider</button>
+      </div>
+    </div>
+  </div>
+</div>
+</form>
+<!-- FIN MODAL -->
 
 </br> </br></br>
 
@@ -61,13 +95,13 @@ $TOs = $request->fetchAll();
 include '../partials/sidebar.php';
 ?>
             <?php  foreach($TOs as $TO) {?>
-                <div class="firstcard card shadow-sm col-2" style="width: 18rem;" data-card="cardTrip">
+                <div class="firstcard card shadow-sm col-4" style="width: 18rem;" data-card="cardTrip">
                     <img src="../assets/images/plages.jpg" class="card-img-top">
                         <div class="card-body" style="background-color: white;">
                             <h5 class="card-title">JAPON</h5>
                             <p class="card-text">1/5 NOTE
                                 <br>PRIX: 200 euro</p>
-                                <a href="#" class="btn btn-primary">INFO</a>
+                                <a href="fiche-produit.php" class="btn btn-primary">INFO</a>
                                 <?=($TO['name']);?>
                        </div>
                 </div>
@@ -80,24 +114,11 @@ include '../partials/sidebar.php';
 <!-- FIN BOUCLE PHP -->
             </br>
 
-            <div class="scrollbaby"></div>
 
-<script>
-  $(function() {
 
-$("body").mousewheel(function(event, delta) {
-
-   this.scrollLeft -= (delta * 30);
- 
-   event.preventDefault();
-
-});
-
-});
-</script>
 
 <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js?ver=1.3.2'></script>
-<script type='text/javascript' src='/js/jquery.mousewheel.min.js'></script>
+<!--<script type='text/javascript' src='/js/jquery.mousewheel.min.js'></script> -->
 
 
 

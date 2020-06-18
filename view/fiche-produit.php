@@ -19,7 +19,7 @@
          $uData = $sql->fetch_assoc();
          $uID = $uData['gradeID'];
   }    else
-         $bdd->query("UPDATE tour_operators SET grade='$grade' WHERE gradeID ='$uID");
+         $bdd->query("UPDATE tour_operators SET grade='$grade' WHERE gradeID ='$uID'");
       
          exit(json_encode(array('gradeID' => $uID)));
   }
@@ -28,23 +28,15 @@
   $numR = $sql->num_rows;
 
   $sql = $bdd->query("SELECT SUM(grade) AS total FROM tour_operators");
-  $rData = $sql->fetch_array();
-  $total = $rData['total'];
+ // $rData = $sql->fetch_array();
+ // $total = $rData['total'];
 
-  $avg = $total / $numR;
+  //$avg = $total / $numR;
 ?>
 
 <body>
 
-<div style="background-color: black;">
-<i class="fa fa-star fa-2x" data-index="0"></i>
-<i class="fa fa-star fa-2x" data-index="1"></i>
-<i class="fa fa-star fa-2x" data-index="2"></i>
-<i class="fa fa-star fa-2x" data-index="3"></i>
-<i class="fa fa-star fa-2x" data-index="4"></i>
-<br><br>
-<!--Note :  <?php echo $avg ?> Sur 5 -->
-</div>
+
 
 <script>
   var grade = -1, uID = 0;
@@ -128,7 +120,6 @@ function resetStarColors() {
     </div>
 <br>
 <br>
-<h1 class="pays text-center">JAPON</h1>
 <br>
 <div class="container">
 <?php  for ($i=1; $i <11; $i++):?>
@@ -139,15 +130,21 @@ function resetStarColors() {
             </div>
             <div class=" card-text col-md-6">
                 <div class="secondCard-body text-center">
-                    <h5 class="card-title">Card title</h5>
+                    <h5 class="card-title"><?=($TO['name']);?></h5>
                     <p class="card-text ">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                 </div>
             </div>
             <div class="card-review col-md-12">
                 <div class="secondCard-body">
-                    <p class="card-text ">commentaire:</p>
-                    <p>review:</p>
-                    <p>note:</p>
+                    <div style="background-color: black; width: 170px; height: 30px;">
+<i class="fa fa-star fa-2x" data-index="0"></i>
+<i class="fa fa-star fa-2x" data-index="1"></i>
+<i class="fa fa-star fa-2x" data-index="2"></i>
+<i class="fa fa-star fa-2x" data-index="3"></i>
+<i class="fa fa-star fa-2x" data-index="4"></i>
+<br><br>
+</div>
+                    </p>
                 </div><br><br>
             </div>
         </div>
