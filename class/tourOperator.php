@@ -9,7 +9,6 @@ require '../config/autoload.php';
 //     private $link;
 //     private $is_premium;
 
-
 //     public function __construct(){
 
 //     }

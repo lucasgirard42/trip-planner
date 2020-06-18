@@ -1,13 +1,13 @@
 
 
 
-<section class="bg-img text-center bg-light">
+<section class="bg-img text-center">
 
         <div class="container">
           <h2>
-            <strong>Subscribe</strong>
+            <strong>Inscrivez vous à notre Newsletter</strong>
           </h2>
-          <h6 class="font-alt">Get weekly top new jobs delivered to your inbox</h6>
+          <h6 class="font-alt">Recevez une alerte dès qu'une offre est disponible</h6>
           <br><br>
           <form class="form-subscribe" action="#">
             <div class="input-group">
@@ -27,6 +27,7 @@
 <style>
     section
 {
+  
   padding:4%;
   background:grey;
 }
