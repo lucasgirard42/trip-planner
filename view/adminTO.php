@@ -32,6 +32,7 @@
     </div>
   <form class="formulaire" action="../class/tourOperator.php" method="POST">
      <div class="form-group">
+       <input name='id' type="hidden" value="<?= $_GET['id']?>">
       <label>destination</label>
       <select name="location" class="form-control" id="exampleFormControlSelect1" style="width: 150px;" required>
         <option value="JAPON">JAPON</option>
