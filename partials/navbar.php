@@ -4,7 +4,7 @@ include 'head.php';
 
 
 <nav class="navbar navbar-expand-lg bg-light shadow-sm ">
-  <img src="../assets/images/rsz_1logo.png" alt="">
+  <a href="../view/accueil.php"><img src="../assets/images/rsz_1logo.png" alt=""></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -26,7 +26,7 @@ include 'head.php';
             <a class="dropdown-item" href="../view/adminToSign.php">Section Tour-opérateur</a>
             <a class="dropdown-item" href="">section Utilisateur</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">section admin</a>
+            <a class="dropdown-item" href="../view/admin.php">section admin</a>
             </div>
         </li>
         
@@ -40,7 +40,40 @@ include 'head.php';
             <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
             <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
         </svg>
+        <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel" style="color: black; margin-left: 160px;">Connectez-vous</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="" method="post">
+      <div class="modal-body">
+        <input type="text" name="author" placeholder="PSEUDO">
+      </div>
+      <div class="modal-header">
+        <h6 class="modal-title" id="exampleModalLabel" style="color: black; margin-left: 150px;">Ou créez un compte</h6>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <input type="text" name="author" placeholder="PSEUDO">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+        <button type="submit" class="btn btn-primary">Valider</button>
+      </div>
+    </div>
+  </div>
+</div>
+</form>
+<!-- FIN MODAL -->
 </nav>
+
 
 
 

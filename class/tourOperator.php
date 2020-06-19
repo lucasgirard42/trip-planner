@@ -40,6 +40,7 @@ require '../config/autoload.php';
 // }
 
 // récupération des valeurs du formulaire
+if (isset($_POST['name']) && isset($_POST['link']) && isset($_POST['location']) && isset($_POST['price']) && isset($_POST['img_profil'])) {
 $name = $_POST['name'];
 // $grade =  $_POST['grade'];
 $link = $_POST['link'];
@@ -64,17 +65,15 @@ $tourOperatorIds = $joinOperatorId->fetchAll();
  
 
 //préparation d'une requête
-
 $inserTO = $bdd->prepare("  INSERT INTO tour_operators(name, link )
-                                VALUES (?,?) ");
+                              VALUES (?,?) ");
                             
 $inserTO->execute([
-        $name,
-        $link
- ]);
+         $name,
+         $link  ]);
  
- $inserLocation = $bdd->prepare("  INSERT INTO destinations(location, price, id_tour_operator, images)
- VALUES (?,?,?,?) ");
+  $inserLocation = $bdd->prepare("  INSERT INTO destinations(location, price, id_tour_operator, images)
+  VALUES (?,?,?,?) ");
 
 $inserLocation->execute([
     $location,
@@ -88,7 +87,7 @@ $inserLocation->execute([
     
    
 
-]);
+// ]);
  ?>      
         
         
