@@ -1,5 +1,5 @@
 <?php 
-
+session_start();
 include '../partials/head.php';
 include '../partials/navbar.php';
 include '../config/autoload.php';
@@ -9,8 +9,10 @@ include '../class/review.php';
 $request = $bdd->query("SELECT * from tour_operators");
 $TOs = $request->fetchAll();
 
-$request1 = $bdd->query("SELECT * FROM destinations");
-$destination = $request1->fetchAll();
+$request = $bdd->query("SELECT * FROM destinations");
+$destinations = $request->fetchAll();
+
+
 
       ?>
 
@@ -66,23 +68,34 @@ $destination = $request1->fetchAll();
         <div class="row">
 
             <?php  foreach($TOs as $TO) {?>
-                <div class="firstcard card shadow-sm col-2 mr-2" style="width: 18rem;" data-card="cardTrip">
-                    <img src="../assets/images/plages.jpg" class="card-img-top">
+              <?php foreach($destinations as $destination) { ?>
+                <div class="firstcard card shadow-sm col-3 mr-3" data-card="cardTrip">
+                    <img src="<?=($destination['img_profil']);?>" class="card-img-top">
+                    <div style="width: 120px; height: 30px; margin-left: 35px;">
+                      <i class="fa fa-star fa-1x" data-index="0"></i>
+                      <i class="fa fa-star fa-1x" data-index="1"></i>
+                      <i class="fa fa-star fa-1x" data-index="2"></i>
+                      <i class="fa fa-star fa-1x" data-index="3"></i>
+                      <i class="fa fa-star fa-1x" data-index="4"></i>
+                      <br><br>
+                      </div>
                         <div class="card-body" style="background-color: white;">
-                            <h5 class="card-title">JAPON</h5>
-                            <p class="card-text">1/5 NOTE
-                                <br><p><?=($destination['price']);?></p>
-                                <a href="fiche-produit.php" class="btn btn-primary">INFO</a>
-                                <br>
-                                <?=($TO['name']);?>
-                       </div>
-                </div>
-            <?php }?> 
+                            <h5 class="card-title"><?=$destination['location']?></h5>
+                            <p style="color: red;">Par <?=($TO['name']);?> </p>
+                            
+            
+                            
+                                <br><p style="background-color: green;">à partir de <?=($destination['price']);?>€</p>
+                                <a href="fiche-produit.php?id=<?=$destination['id'];?>" class="btn btn-primary">Voir les offres</a>
+                                <br> 
+            
+                      </div>
+                  </div>
+                  <?php } } ?>
+             </div>
             
         </div>
-    </div>
-    </div>
-            
+
 <!-- FIN BOUCLE PHP -->
         
 <?php include '../partials/form.php'?>

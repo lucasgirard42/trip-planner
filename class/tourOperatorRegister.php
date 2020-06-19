@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 require '../config/autoload.php';
 
@@ -41,15 +42,14 @@ require '../config/autoload.php';
 
 // récupération des valeurs du formulaire
 //if (isset($_POST['name']) && isset($_POST['link']) && isset($_POST['location']) && isset($_POST['price']) && isset($_POST['img_profil'])) {
-//$name = $_GET['name'];
-// $grade =  $_POST['grade'];
-//$link = $_POST['link'];
+$name = $_POST['name'];
+//  $grade =  $_POST['grade'];
+$link = $_POST['link'];
 $location = $_POST['location'];
 $price = $_POST['price'];
 $id_tour_operator = 1;
 $img_profil = $_POST['img_profil']; 
 
-}
 
 
 
@@ -66,12 +66,12 @@ $tourOperatorIds = $joinOperatorId->fetchAll();
  
 
 //préparation d'une requête
-// $inserTO = $bdd->prepare("  INSERT INTO tour_operators( name,link )
-//                               VALUES (?,?) ");
+ $inserTO = $bdd->prepare("  INSERT INTO tour_operators( name,link )
+                               VALUES (?,?) ");
                             
-// $inserTO->execute([
-//          $name,
-//          $link  ]);
+ $inserTO->execute([
+          $name,
+          $link  ]);
  
   $inserLocation = $bdd->prepare("  INSERT INTO destinations(location, price, id_tour_operator, images)
   VALUES (?,?,?,?) ");
@@ -89,12 +89,10 @@ $inserLocation->execute([
    
 
 ]);
+
+
+
+
+
 header( 'location: ../view/accueil.php');
  ?>      
-        
-        
-       
-        
-        
-        
-        <!--SELECT * FROM `destinations` INNER JOIN `tour_operators` ON `destinations.id_tour_operator` = `tour_operators.id`

@@ -1,29 +1,31 @@
 <?php 
+     session_start();
      include '../partials/head.php';
      include '../partials/navbar.php';
+     include '../config/autoload.php';
  ?>
 
 <?php
 
 
-     $bdd= new mysqli("localhost","root","","comparoperator");
+// // //      $bdd= new PDO("localhost","root","","comparoperator");
 
-      if (isset($_POST['save'])) {
-     // include '../config/autoload.php';
-      $uID = $bdd->real_escape_string($_POST['uID']);
-      $grade = $bdd->real_escape_string($_POST['grade']);
-      $grade++;
+// // //       if (isset($_POST['save'])) {
+// // //      // include '../config/autoload.php';
+// // //       $uID = $bdd->real_escape_string($_POST['uID']);
+// // //       $grade = $bdd->real_escape_string($_POST['grade']);
+// // //       $grade++;
 
-      if (!$uID) {
-         $bdd->query("INSERT INTO tour_operators (grade) VALUES ('$grade')");
-         $sql = $bdd->query("SELECT gradeID FROM tour_operators ORDER BY gradeID DESC LIMIT 1");
-         $uData = $sql->fetch_assoc();
-         $uID = $uData['gradeID'];
-  }    else
-         $bdd->query("UPDATE tour_operators SET grade='$grade' WHERE gradeID ='$uID'");
+// // //       if (!$uID) {
+// // //          $bdd->query("INSERT INTO tour_operators (grade) VALUES ('$grade')");
+// // //          $sql = $bdd->query("SELECT gradeID FROM tour_operators ORDER BY gradeID DESC LIMIT 1");
+// // //          $uData = $sql->fetch_assoc();
+// // //          $uID = $uData['gradeID'];
+// // //   }    else
+// // //          $bdd->query("UPDATE tour_operators SET grade='$grade' WHERE gradeID ='$uID'");
       
-         exit(json_encode(array('gradeID' => $uID)));
-  }
+// // //          exit(json_encode(array('gradeID' => $uID)));
+// // //   }
 
  // $sql = $bdd->query("SELECT gradeID FROM tour_operators");
  // $numR = $sql->num_rows;
@@ -122,6 +124,23 @@ function resetStarColors() {
 <br>
 <br>
 <br>
+<!--- Fin BOITE QUI FILTRE -->
+
+
+<?php
+  $id = $_GET['id']; 
+  $reponse = $bdd->prepare('SELECT `id`, `location`, `price`, `id_tour_operator`, `images` FROM `destinations` WHERE id = ?');
+  $reponse->execute(array($_GET['id']));
+  $reponse1 = $bdd->prepare('SELECT `id`, `name`, `link` FROM `tour_operators` WHERE id = ?');
+  $reponse1->execute(array($_GET['id']));
+  while ($donnees = $reponse->fetch()) {
+    while ($donnees1 = $reponse1->fetch()) {
+  
+
+  
+?>
+
+
 <div class="container">
     <div class="secondCard  shadow-sm mb-12 mt-5">
         <div class="row no-gutters">
@@ -130,32 +149,42 @@ function resetStarColors() {
             </div>
             <div class=" card-text col-md-6">
                 <div class="secondCard-body text-center">
-                    <h5 class="card-title"><?=($TO['name']);?></h5>
-                    <p class="card-text ">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <h5 class="card-title"><?=($donnees['location']);?></h5>
+                    <p class="card-text ">DESCRIPTION DU VOYAGE.</p>
+                    <p>Prix TTC : <?=($donnees['price']);?> € </p>
+                    <p>Proposé par : <?=($donnees1['name']);?></p>
+                    <p>Site Officiel : <?=($donnees1['link']);?></p>
                 </div>
             </div>
             <div class="card-review col-md-12">
                 <div class="secondCard-body">
-                    <div style="background-color: black; width: 170px; height: 30px;">
-<i class="fa fa-star fa-2x" data-index="0"></i>
+                    <div style="background-color: black; width: 505px; height: 30px;">
+<truc style="color: white; padding-left:"><strong>Note :</strong></truc>
+<i class="fa fa-star fa-2x" data-index="0" style="margin-left: 110px;"></i>
 <i class="fa fa-star fa-2x" data-index="1"></i>
 <i class="fa fa-star fa-2x" data-index="2"></i>
 <i class="fa fa-star fa-2x" data-index="3"></i>
 <i class="fa fa-star fa-2x" data-index="4"></i>
 <br><br>
 </div>
+
+
+<!----- PARTIE REVIEW --------------->
+<div class="review" style="border: 2px solid black; width: 100%; height: 350px;">
+<h3 style="text-align: center;">Commentaires et avis</h3>
+</div>
                     </p>
+<input type="text" placeholder="Ecrivez un avis sur cette offre" style="width: 800px; height: 45px; margin-left: 25px; margin-top: 20px;">
+<input type="submit" placeholder="Envoyer" style="height: 45px; width: 150px;">
                 </div><br><br>
             </div>
         </div>
     </div>
 </div>
 
-<div class="container">
-<p> BONjour </p>
-</div>
-
-
+<?php
+  } }
+  ?>
 
 
 

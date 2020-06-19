@@ -18,27 +18,31 @@ $Ids = $request->fetchAll();
     <div class="row justify-content-center">
         <div class="cardFormTo col-3 shadow-sm bg-light text-center" style="width: 18rem;">
             <div class="card-body">
-                <form action="../class/profilTo.php" method="GET" >
+                <form action="adminTO.php" method="GET" >
                     <div class="form-group">
                         <label  for="exampleFormControlSelect1">Tour operateur</label>
-                        <select class="form-control" id="tourOperator">
+                        <select name="id" class="form-control" id="tourOperator">
                             <?php  foreach($Ids as $Id) {?>
                             <option value="<?=$Id['id']?>">
                                 <?=$Id['name'];?>
                             </option>
                             <?php }?> 
                         </select>
-                        <a href="adminToLogin.php?id=<?=$Id['id']?>" class="card-link ">validez</a>
                     </div>
                     <div class="form-group">
-                        <p>Veuillez vous inscrire</p>
-                        <a href="adminTO.php" class="card-link ">Sign-up</a>
+                        <p>Acceder a votre site</p>
+                        <button type="submit">ok</button>
                     </div>
                 </form>
+                <div class="form-group">
+                        <p>Veuillez vous enregistrer</p>
+                        <a href="adminTOSignUp.php">s'inscrire</a>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
 
 
 

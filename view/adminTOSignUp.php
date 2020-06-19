@@ -1,36 +1,29 @@
-
-<?php include '../config/autoload.php';
+<?php
+session_start();
+ include '../config/autoload.php';
 
 
 
  include '../partials/head.php'; 
 
- include '../partials/navbar.php'; 
- $request = $bdd->prepare("SELECT * from tour_operators WHERE id = ? ");
- $request->execute([$_GET['id']]);
-
- $operators = $request->fetchAll();
- 
- ?>
+ include '../partials/navbar.php'; ?>
 
  <br>
 
 
 
-<h2 style="text-align: center;">Proposer une destination</h2>
+<h2 style="text-align: center;">Inscription</h2>
 <div style="border: 3px red solid; width: 800px; margin: 0 auto;">
 <div class="container">
-  
+  <form class="formulaire" action="../class/tourOperatorRegister.php" method="POST">
     <div class="form-group">
-      <?php foreach($operators as $operator){ ?>
-      <p>Nom tour opérator: <p>
-      <?php echo($operator['name']) ?>
-      <P>Nom du site: </p>
-      <?php echo($operator['link']) ?>
-
-      <?php } ?>
+      <label for="exampleFormControlInput1">Nom tour opérator</label>
+      <input type="text" name="name" class="form-control" id="exampleFormControlInput1" placeholder="clubmed" style="width: 300px;" required>
     </div>
-  <form class="formulaire" action="../class/tourOperator.php" method="POST">
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Nom du site</label>
+      <input type="text" name="link" class="form-control" id="exampleFormControlInput1" placeholder="clubmed" style="width: 450px;" required>
+    </div>
      <div class="form-group">
       <label>destination</label>
       <select name="location" class="form-control" id="exampleFormControlSelect1" style="width: 150px;" required>
@@ -68,9 +61,9 @@
     <button class="btn btn-success col-md-12 w-50" type="submit"  style="margin-left: 190px;">valider</button>
     </div>
   </form>
+  
 </div>
 </div>
-
 
 <br>
 
