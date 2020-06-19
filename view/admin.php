@@ -36,18 +36,19 @@ $TOs = $request->fetchAll();
     <?php foreach($TOs as $TO) {?>
         <tr>
         <th scope="row"><?= ($TO['id']) ?></th>
-
         <td><?= ($TO['name'])?></td>
         <td><?= ($TO['link'])?></td>
         <td>japon</td>
         <td>oui</td>
-        <td><button type="submit" name="submit" class="btn btn-danger">Supprimer</button></td>
-
+        <td>
+        <a href='../config/delete.php?id=<?=$TO['id']?>'><input type="submit" name="delete" value="SUPPRIMER" class="btn btn-danger"></input></a></td>
         </tr>
     <?php } ?>
     </tbody>
     </table>
 </div>
+
+
 
   
  

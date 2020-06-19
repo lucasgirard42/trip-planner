@@ -49,6 +49,7 @@ $price = $_POST['price'];
 $id_tour_operator = 1;
 $img_profil = $_POST['img_profil'];
 
+}
 
 
 
@@ -87,7 +88,7 @@ $inserLocation->execute([
     
    
 
-// ]);
+ ]);
  ?>      
         
         
