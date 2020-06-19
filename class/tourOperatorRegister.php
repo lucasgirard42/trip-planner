@@ -47,7 +47,7 @@ $name = $_POST['name'];
 $link = $_POST['link'];
 $location = $_POST['location'];
 $price = $_POST['price'];
-$id_tour_operator = 1;
+$id_tour_operator = $_POST['id'];
 $img_profil = $_POST['img_profil']; 
 
 

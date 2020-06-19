@@ -17,6 +17,7 @@ session_start();
 <div class="container">
   <form class="formulaire" action="../class/tourOperatorRegister.php" method="POST">
     <div class="form-group">
+    <input name='id' type="hidden" value="<?= $_POST['id']?>">
       <label for="exampleFormControlInput1">Nom tour opérator</label>
       <input type="text" name="name" class="form-control" id="exampleFormControlInput1" placeholder="clubmed" style="width: 300px;" required>
     </div>
