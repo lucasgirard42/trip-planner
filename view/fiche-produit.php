@@ -1,5 +1,6 @@
-<?php include '../partials/navbar.php';
+<?php 
      include '../partials/head.php';
+     include '../partials/navbar.php';
  ?>
 
 <?php
@@ -24,10 +25,10 @@
          exit(json_encode(array('gradeID' => $uID)));
   }
 
-  $sql = $bdd->query("SELECT gradeID FROM tour_operators");
-  $numR = $sql->num_rows;
+ // $sql = $bdd->query("SELECT gradeID FROM tour_operators");
+ // $numR = $sql->num_rows;
 
-  $sql = $bdd->query("SELECT SUM(grade) AS total FROM tour_operators");
+ // $sql = $bdd->query("SELECT SUM(grade) AS total FROM tour_operators");
  // $rData = $sql->fetch_array();
  // $total = $rData['total'];
 
@@ -122,7 +123,6 @@ function resetStarColors() {
 <br>
 <br>
 <div class="container">
-<?php  for ($i=1; $i <11; $i++):?>
     <div class="secondCard  shadow-sm mb-12 mt-5">
         <div class="row no-gutters">
             <div class="card-image  border-top col-md-6">
@@ -149,9 +149,11 @@ function resetStarColors() {
             </div>
         </div>
     </div>
-    <?php endfor ?>
 </div>
 
+<div class="container">
+<p> BONjour </p>
+</div>
 
 
 
@@ -162,6 +164,7 @@ function resetStarColors() {
 <?php include '../partials/form.php'?>
 
 <?php include '../partials/footer.php'?>
+
 
 
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>

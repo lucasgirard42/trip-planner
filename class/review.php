@@ -39,7 +39,7 @@
 
 if(!empty($_POST["author"])) {
     $author = htmlspecialchars($_POST["author"]);
-    $insertAuthor = $bdd->prepare('INSERT INTO reviews (author) VALUES (?)');
+    $insertAuthor = $bdd->prepare('INSERT INTO reviews (id, message, author, id_tour_operator) VALUES (?)');
     $insertAuthor->execute([$author]);
     
     
