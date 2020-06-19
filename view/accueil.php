@@ -96,7 +96,7 @@ $TOs = $request->fetchAll();
         <div class="row">
 
             <?php  foreach($TOs as $TO) {?>
-                <div class="firstcard card shadow-sm col-2" style="width: 18rem;" data-card="cardTrip">
+                <div class="firstcard card shadow-sm col-2 mr-2" style="width: 18rem;" data-card="cardTrip">
                     <img src="../assets/images/plages.jpg" class="card-img-top">
                         <div class="card-body" style="background-color: white;">
                             <h5 class="card-title">JAPON</h5>
@@ -117,6 +117,7 @@ $TOs = $request->fetchAll();
         
 <?php include '../partials/form.php'?>
 
+<?php include '../partials/footer.php'?>
 
 <?php include '../partials/footer.php'?>
 
@@ -126,4 +127,25 @@ $TOs = $request->fetchAll();
 <!--<script type='text/javascript' src='/js/jquery.mousewheel.min.js'></script> -->
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
 

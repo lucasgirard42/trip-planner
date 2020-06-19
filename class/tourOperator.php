@@ -49,6 +49,8 @@ $id_tour_operator = 1;
 $img_profil = $_POST['img_profil'];
 
 
+
+
 $joinOperatorId = $bdd->query('SELECT * 
                                 FROM destinations
                                 INNER JOIN tour_operators

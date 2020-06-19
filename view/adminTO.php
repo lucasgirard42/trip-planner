@@ -3,7 +3,9 @@
 
 
 
- include '../partials/head.php'; ?> 
+ include '../partials/head.php'; ?>
+ 
+
 
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm ">
@@ -50,16 +52,16 @@
   <form class="formulaire" action="../class/tourOperator.php" method="POST">
     <div class="form-group">
       <label for="exampleFormControlInput1">Nom tour opérator</label>
-      <input type="text" name="name" class="form-control" id="exampleFormControlInput1" placeholder="clubmed">
+      <input type="text" name="name" class="form-control" id="exampleFormControlInput1" placeholder="clubmed" required>
     </div>
     <div class="form-group">
       <label for="exampleFormControlInput1">Nom du site</label>
-      <input type="text" name="link" class="form-control" id="exampleFormControlInput1" placeholder="clubmed">
+      <input type="text" name="link" class="form-control" id="exampleFormControlInput1" placeholder="clubmed" required>
     </div>
      <div class="form-group">
       <label for="exampleFormControlSelect1" >destination</label>
       <select name="location" class="form-control" id="exampleFormControlSelect1">
-        <option value="JAPON">JAPON</option>
+        <option value="ids">JAPON</option>
         <option value="AUSTRALIE">AUSTRALIE</option>
         <option value="INDE">INDE</option>
         <option value="MAROC">MAROC</option>
@@ -73,7 +75,7 @@
     </div>
     <div class="form-group">
       <label for="exampleFormControlInput1">prix (€)</label>
-      <input type="number" name="price">
+      <input type="number" name="price" required>
     </div>
     <div class="form-group">
       <label for="img_profil">Choisir une photo de profil</label>
@@ -85,6 +87,7 @@
               ?>     
               
     </div>
+    
 
    
     

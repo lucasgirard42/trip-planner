@@ -23,7 +23,7 @@ include 'head.php';
             Dropdown
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="../view/adminTO.php">Section Tour-opérateur</a>
+            <a class="dropdown-item" href="../view/adminToSign.php">Section Tour-opérateur</a>
             <a class="dropdown-item" href="">section Utilisateur</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">section admin</a>
