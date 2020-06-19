@@ -8,43 +8,16 @@ include '../class/review.php';
 
 $request = $bdd->query("SELECT * from tour_operators");
 $TOs = $request->fetchAll();
+
+$request1 = $bdd->query("SELECT * FROM destinations");
+$destination = $request1->fetchAll();
+
       ?>
 
 
 <html>
 <body>
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel" style="color: black; margin-left: 160px;">Connectez-vous</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <form action="" method="post">
-      <div class="modal-body">
-        <input type="text" name="author" placeholder="PSEUDO">
-      </div>
-      <div class="modal-header">
-        <h6 class="modal-title" id="exampleModalLabel" style="color: black; margin-left: 150px;">Ou créez un compte</h6>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <input type="text" name="author" placeholder="PSEUDO">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-        <button type="submit" class="btn btn-primary">Valider</button>
-      </div>
-    </div>
-  </div>
-</div>
-</form>
-<!-- FIN MODAL -->
+
 
 </br> </br></br>
 
@@ -68,7 +41,7 @@ $TOs = $request->fetchAll();
 
 <!---BOITE QUI FILTRE LA RECHERCHE----->
 
-<div class="filtrer shadow-lg" style="background-color: royalblue; opacity: 95%;">
+<div class="filtrer shadow-lg" style="background-color: beige; opacity: 95%;">
 
 
 
@@ -92,16 +65,14 @@ $TOs = $request->fetchAll();
 <!-- BOUCLE PHP AVEC CARDS -->
     <div class="container">
         <div class="row">
-        <?php
-include '../partials/sidebar.php';
-?>
-            <?php  foreach($TOs as $TO) {?>
+
+            <?php  foreach($TOs as $TO)  {?>
                 <div class="firstcard card shadow-sm col-2" style="width: 18rem;" data-card="cardTrip">
                     <img src="../assets/images/plages.jpg" class="card-img-top">
                         <div class="card-body" style="background-color: white;">
                             <h5 class="card-title">JAPON</h5>
                             <p class="card-text">1/5 NOTE
-                                <br>PRIX: 200 euro</p>
+                                <br><p><?=($destination['price']);?></p>
                                 <a href="fiche-produit.php" class="btn btn-primary">INFO</a>
                                 <?=($TO['name']);?>
                        </div>
