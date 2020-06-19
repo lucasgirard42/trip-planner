@@ -9,8 +9,8 @@ include '../class/review.php';
 $request = $bdd->query("SELECT * from tour_operators");
 $TOs = $request->fetchAll();
 
-$request1 = $bdd->query("SELECT * FROM destinations");
-$destination = $request1->fetchAll();
+$request = $bdd->query("SELECT * FROM destinations");
+$destinations = $request->fetchAll();
 
       ?>
 
@@ -89,7 +89,7 @@ $destination = $request1->fetchAll();
 
 <?php include '../partials/footer.php'?>
 
-<?php include '../partials/footer.php'?>
+
 
 
 
