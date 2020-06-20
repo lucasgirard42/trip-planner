@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: mysql
--- Generation Time: May 28, 2019 at 11:47 AM
--- Server version: 10.3.4-MariaDB
--- PHP Version: 7.2.15
+-- Hôte : localhost:3306
+-- Généré le : sam. 20 juin 2020 à 20:37
+-- Version du serveur :  5.7.24
+-- Version de PHP : 7.2.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,35 +18,39 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `ComparOperator`
+-- Base de données : `comparoperator`
 --
-CREATE DATABASE IF NOT EXISTS `ComparOperator` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `ComparOperator`;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `destinations`
+-- Structure de la table `destinations`
 --
 
 CREATE TABLE `destinations` (
   `id` int(10) NOT NULL,
   `location` varchar(150) NOT NULL,
   `price` int(10) NOT NULL,
-  `id_tour_operator` int(10) NOT NULL
+  `id_tour_operator` int(10) NOT NULL,
+  `images` varchar(1000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `destinations`
+-- Déchargement des données de la table `destinations`
 --
 
-INSERT INTO `destinations` (`id`, `location`, `price`, `id_tour_operator`) VALUES
-(1, 'corse', 500, 1);
+INSERT INTO `destinations` (`id`, `location`, `price`, `id_tour_operator`, `images`) VALUES
+(1, 'corse', 500, 1, ''),
+(44, 'AUSTRALIE', 989, 30, 'logo nintendo.jpg'),
+(45, 'INDE', 899, 31, 'nintendo 2.jpg'),
+(46, 'MARTINIQUE', 989, 1, 'zelda.jfif'),
+(47, 'ISLANDE', 664, 32, 'logo nintendo.jpg'),
+(48, 'MARTINIQUE', 213, 31, 'switch.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `reviews`
+-- Structure de la table `reviews`
 --
 
 CREATE TABLE `reviews` (
@@ -58,7 +61,7 @@ CREATE TABLE `reviews` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `reviews`
+-- Déchargement des données de la table `reviews`
 --
 
 INSERT INTO `reviews` (`id`, `message`, `author`, `id_tour_operator`) VALUES
@@ -67,76 +70,83 @@ INSERT INTO `reviews` (`id`, `message`, `author`, `id_tour_operator`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tour_operators`
+-- Structure de la table `tour_operators`
 --
 
 CREATE TABLE `tour_operators` (
   `id` int(10) NOT NULL,
   `name` varchar(150) NOT NULL,
-  `grade` int(2) NOT NULL,
-  `link` varchar(255) NOT NULL,
-  `is_premium` tinyint(1) NOT NULL DEFAULT 0
+  `link` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tour_operators`
+-- Déchargement des données de la table `tour_operators`
 --
 
-INSERT INTO `tour_operators` (`id`, `name`, `grade`, `link`, `is_premium`) VALUES
-(1, 'club med', 5, 'https://www.clubmed.fr/', 0);
+INSERT INTO `tour_operators` (`id`, `name`, `link`) VALUES
+(1, 'club med', 'https://www.clubmed.fr/'),
+(30, 'FRAM', 'www.fram.com'),
+(31, 'le voyage', 'www.voyage'),
+(32, 'steven universe', 'www.steven.ccom');
 
 --
--- Indexes for dumped tables
+-- Index pour les tables déchargées
 --
 
 --
--- Indexes for table `destinations`
+-- Index pour la table `destinations`
 --
 ALTER TABLE `destinations`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_operator` (`id_tour_operator`);
 
 --
--- Indexes for table `reviews`
+-- Index pour la table `reviews`
 --
 ALTER TABLE `reviews`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_tour_operator` (`id_tour_operator`);
 
 --
--- Indexes for table `tour_operators`
+-- Index pour la table `tour_operators`
 --
 ALTER TABLE `tour_operators`
   ADD PRIMARY KEY (`id`);
 
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
 
 --
--- AUTO_INCREMENT for table `destinations`
+-- AUTO_INCREMENT pour la table `destinations`
 --
 ALTER TABLE `destinations`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+
+--
+-- AUTO_INCREMENT pour la table `reviews`
+--
+ALTER TABLE `reviews`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `reviews`
---
-ALTER TABLE `reviews`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `tour_operators`
+-- AUTO_INCREMENT pour la table `tour_operators`
 --
 ALTER TABLE `tour_operators`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
--- Constraints for table `destinations`
+-- Contraintes pour les tables déchargées
+--
+
+--
+-- Contraintes pour la table `destinations`
 --
 ALTER TABLE `destinations`
   ADD CONSTRAINT `fk_operator` FOREIGN KEY (`id_tour_operator`) REFERENCES `tour_operators` (`id`) ON DELETE CASCADE;
 
 --
--- Constraints for table `reviews`
+-- Contraintes pour la table `reviews`
 --
 ALTER TABLE `reviews`
   ADD CONSTRAINT `fk_tour_operator` FOREIGN KEY (`id_tour_operator`) REFERENCES `tour_operators` (`id`) ON DELETE CASCADE;
