@@ -49,6 +49,7 @@ $price = $_POST['price'];
 $id_tour_operator =  $_POST['id'];
 $img_profil = $_POST['img_profil']; 
 
+}
 
 
 
